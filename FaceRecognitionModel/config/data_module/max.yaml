@@ -1,0 +1,18 @@
+_target_: datasets.glint360k_pl_module.Glint360kModule
+train:
+  batch_size: 24
+  shuffle: True
+  num_workers: 2
+  drop_last: False
+  pin_memory: True
+  collate_fn: null
+  persistent_workers: True
+val:
+  batch_size: ${data_module.train.batch_size}
+  shuffle: False
+  num_workers: ${data_module.train.num_workers}
+  drop_last: False
+  pin_memory: True
+  collate_fn: null
+  persistent_workers: True
+test: ${data_module.val}

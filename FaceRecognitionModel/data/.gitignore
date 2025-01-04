@@ -1,0 +1,6 @@
+# Ignore everything in this directory
+face_imgs
+img_paths.json
+
+# Except this file
+!.gitignore

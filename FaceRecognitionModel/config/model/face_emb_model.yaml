@@ -1,0 +1,3 @@
+_target_: models.face_embedding.FaceEmbeddingModel
+backbone: ${backbones}
+embedding_dimension: 512

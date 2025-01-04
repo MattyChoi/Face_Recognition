@@ -1,0 +1,15 @@
+train:
+  _target_: datasets.glint360k.Glint360k
+  data_path: /Users/matthewchoi/Projects/FaceDetection/FaceRecognitionModel/data/img_paths.json
+  transform: null
+  num_sample_per_idty: 8
+val:
+  _target_: datasets.glint360k.Glint360k
+  data_path: /Users/matthewchoi/Projects/FaceDetection/FaceRecognitionModel/data/img_paths.json
+  transform: null
+  num_sample_per_idty: 8
+test: 
+  _target_: datasets.glint360k.Glint360k
+  data_path: /Users/matthewchoi/Projects/FaceDetection/FaceRecognitionModel/data/img_paths.json
+  transform: null
+  num_sample_per_idty: 8

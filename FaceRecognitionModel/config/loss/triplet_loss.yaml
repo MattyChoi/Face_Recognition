@@ -1,0 +1,4 @@
+_target_: losses.triplet_loss.BatchHardTripletLoss
+margin: 0.2
+squared: False
+normalize_features: False
