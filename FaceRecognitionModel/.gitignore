@@ -1,5 +1,6 @@
 outputs
 tb_logs
+imgs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
