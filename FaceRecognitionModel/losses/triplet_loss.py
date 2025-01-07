@@ -81,7 +81,7 @@ def _get_triplet_mask(idtys: torch.tensor):
     return triplet_mask
 
 
-def _get_anchor_positive_triplet_mask(idtys: torch.tensor):
+def _get_anchor_positive_mask(idtys: torch.tensor):
     """
     Return a 2D mask where mask[a, p] is True iff a and p are distinct and have the same identity.
 
@@ -106,7 +106,7 @@ def _get_anchor_positive_triplet_mask(idtys: torch.tensor):
     return anchor_positive_mask
 
 
-def _get_anchor_negative_triplet_mask(idtys: torch.tensor):
+def _get_anchor_negative_mask(idtys: torch.tensor):
     """
     Return a 2D mask where mask[a, n] is True iff a and n have distinct identities.
 
@@ -156,12 +156,12 @@ class BatchHardTripletLoss(nn.Module):
         pairwise_distances = _pairwise_distances(embs, squared=self.squared)
 
         # Get the hardest positive
-        mask_anchor_positive = _get_anchor_positive_triplet_mask(idtys).float()
+        mask_anchor_positive = _get_anchor_positive_mask(idtys).float()
         anchor_positive_dist = mask_anchor_positive * pairwise_distances
         hardest_positive_dist, _ = anchor_positive_dist.max(1, keepdim=True)
 
         # Get the hardest negative
-        mask_anchor_negative = _get_anchor_negative_triplet_mask(idtys).float()
+        mask_anchor_negative = _get_anchor_negative_mask(idtys).float()
         max_anchor_dist, _ = pairwise_distances.max(1, keepdim=True)
         anchor_negative_dist = pairwise_distances + max_anchor_dist * (
             1.0 - mask_anchor_negative

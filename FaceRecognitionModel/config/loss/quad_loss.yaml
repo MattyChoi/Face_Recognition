@@ -1,0 +1,5 @@
+_target_: losses.quadruplet_loss.BatchHardQuadrupletLoss
+margin_triple: 0.2
+margin_inter: 0.1
+squared: False
+normalize_features: False

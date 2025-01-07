@@ -1,0 +1,5 @@
+_target_: losses.arcface.ArcFace
+num_classes: 360232
+dim: 512
+scale: 64.0
+margin: 0.5

@@ -1,6 +1,6 @@
 _target_: datasets.glint360k_pl_module.Glint360kModule
 train:
-  batch_size: 24
+  batch_size: 20
   shuffle: True
   num_workers: 2
   drop_last: False

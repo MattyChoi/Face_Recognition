@@ -11,7 +11,7 @@ defaults:
   - data_module: max
   - dataset: glint360k
   - transform: no_transform
-  - loss: triplet_loss
+  - loss: quad_loss
   - user_overrides: null
 
 pretrained: 
